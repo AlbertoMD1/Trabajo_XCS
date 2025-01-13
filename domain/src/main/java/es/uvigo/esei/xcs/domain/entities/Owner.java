@@ -124,15 +124,7 @@ public class Owner extends User implements Serializable {
 	}
 
 
-	public void remPet(Pet pet) {
-		requireNonNull(pet, "pet can't be null");
-		
-		if (this.ownsPet(pet)) {
-			pet.setOwner(null);
-		} else {
-			throw new IllegalArgumentException("pet doesn't belong to this owner");
-		}
-	}
+	
 	
 	/**
 	 * Checks if a pet belongs to this owner.
