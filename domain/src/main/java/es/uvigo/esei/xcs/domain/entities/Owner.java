@@ -17,7 +17,7 @@ import javax.persistence.OneToMany;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
- * A pet owner.
+ * A pet owner. HOLA.
  * 
  * @author Miguel Reboiro-Jato
  */
