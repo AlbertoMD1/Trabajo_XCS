@@ -136,6 +136,10 @@ public class Owner extends User implements Serializable {
 	public boolean ownsPet(Pet pet) {
 		return this.pets.contains(pet);
 	}
+
+	public boolean townsPet(Pet pet) {
+		return this.pets.contains(pet);
+	}
 	
 	/**
 	 * Adds a pet directly to the pets collection of this owner if the pet does
