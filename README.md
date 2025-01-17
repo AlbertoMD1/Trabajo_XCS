@@ -178,7 +178,7 @@ When the `package` goal is run in the `xcs-sample` project, an EAR file is gener
 
 The EAR file contains all the elements of the project (JARs and WARs) and, therefore, you only have to deploy this file in the WildFly container to deploy the entire application. To do so, you can copy this file to the `standalone/deployments` folder of WidlFly.
 
-Once this is done, you can run the WildFly server executing the `bin/standalone.sh` script. The application should be running in http://localhost:8080/xcs-sample. If you want to access through the web interface, you can open the http://localhost:8080/xcs-sample/jsf URL.
+Once this is done, you can run the WildFly server executing the `bin/standalone.sh` script. The application should be running in http://localhost:8081/xcs-sample. If you want to access through the web interface, you can open the http://localhost:8081/xcs-sample/jsf URL.
 
 #### 1.6.4 Deploying the application from Maven
 Maven configuration is prepared to deploy the generated EAR file to a running WildFly. Doing so is as easy as launching the `wildfly:deploy` goal:
@@ -195,7 +195,7 @@ This project includes the Maven WildFly plugin, which allows the execution of th
 ```bash
 mvn install -P wildfly-mysql-run,-wildfly-embedded-h2
 ```
-This will launch the complete construction cycle without running the tests, start a WildFly server and deploy the application. Once the application is running you can access it in the URL http://localhost:8080/xcs-sample/jsf.
+This will launch the complete construction cycle without running the tests, start a WildFly server and deploy the application. Once the application is running you can access it in the URL http://localhost:8081/xcs-sample/jsf.
 
 **Important**: You shouldn't have a local WildFly instance running or Maven will not be able to start its own WildFly and will try to deploy the application in the running instance. This will cause changes to the WildFly configuration that may leave it in an unstable state.
 
@@ -277,15 +277,15 @@ Using Arquillian REST Client, we will test the REST API accessing it as real HTT
 Tests can be run using the same configuration as explained in *Sample 2*.
 
 When executed, the REST resources can be found in:
-* Owners: http://localhost:8080/xcs-sample/rest/api/owner
-* Pets: http://localhost:8080/xcs-sample/rest/api/pet
+* Owners: http://localhost:8081/xcs-sample/rest/api/owner
+* Pets: http://localhost:8081/xcs-sample/rest/api/pet
 
 ## 2.5. Sample 5: Testing JSF
 Using Arquillian Drone, Arquillian Graphene and Selenium, we will test the JSF web interface accessing it as real Web clients.
 
 Tests can be run using the same configuration as explained in *Sample 2*.
 
-When executed, the REST resources can be found in http://localhost:8080/xcs-sample/jsf/faces/index.html.
+When executed, the REST resources can be found in http://localhost:8081/xcs-sample/jsf/faces/index.html.
 
 <span style="color:red">Warning: </span>JSF test have been disabled due to a  [known connection issue](https://firefox-source-docs.mozilla.org/testing/geckodriver/Usage.html#Running-Firefox-in-an-container-based-package) between the Firefox driver and the Firefox installed by default in Ubuntu
 22.04.
